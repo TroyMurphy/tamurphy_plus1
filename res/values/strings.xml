@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Plus1</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="sADDHINT">Add New Counter</string>
+    <string name="sADDBUTTON">Add</string>
+    <string name="title_activity_one_counter">OneCounter</string>
+    <string name="sTITLEHINT">FIRST CREATE A COUNTER</string>
+    <string name="sBUTTONHINT">PlusOne</string>
+    <string name="layoutTitle">Title</string>
+    <string name="layoutCount">Count</string>
+    <string name="sRESET">Reset</string>
+    <string name="sDELETE">Delete</string>
+    <string name="title_activity_counter_page">CounterPageActivity</string>
+
+</resources>
