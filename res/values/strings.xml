@@ -14,5 +14,7 @@
     <string name="sRESET">Reset</string>
     <string name="sDELETE">Delete</string>
     <string name="title_activity_counter_page">CounterPageActivity</string>
+    <string name="sSTATS">Go To</string>
+    <string name="sGETSTATS">Get Statistics</string>
 
 </resources>

@@ -11,10 +11,11 @@
     tools:context=".OneCounter" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvCTITLE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:hint="@string/sTITLEHINT"
         android:paddingBottom="20dp"
         android:paddingTop="20dp"
@@ -25,8 +26,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        style="?android:attr/buttonBarStyle"
-        >
+        style="?android:attr/buttonBarStyle">
 
         <Button
             android:id="@+id/bRESET"
@@ -36,7 +36,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/sRESET"
-			style="?android:attr/buttonBarButtonStyle"/>
+			style="?android:attr/buttonBarButtonStyle"
+			android:onClick="f_RESET"/>
         
         <Button
             android:id="@+id/bDELETE"
@@ -48,15 +49,24 @@
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="@string/sDELETE"
-			style="?android:attr/buttonBarButtonStyle"/>
+			style="?android:attr/buttonBarButtonStyle"
+			android:onClick="f_DELETE"/>
     </LinearLayout>
 
     <Button
-        android:id="@+id/plusOne"
+        android:id="@+id/bSTATS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sGETSTATS"
+        android:onClick="f_STATS" />
+
+    <Button
+        android:id="@+id/bplusOne"
         android:background="@android:color/holo_green_dark"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="@string/sBUTTONHINT" />
+        android:text="@string/sBUTTONHINT" 
+        android:onClick="f_PLUSONE"/>
 
 </LinearLayout>

@@ -1,13 +1,13 @@
 package com.tmurphy.tamurphy_plus1;
 
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Counter implements Serializable{
+public class Counter{
 
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	
 	private String name;
 	private ArrayList<Date> datelist;
@@ -40,12 +40,14 @@ public class Counter implements Serializable{
 	}
 	public void addDate(Date newdate){
 		this.datelist.add(newdate);
-		refreshCount();
+		this.refreshCount();
 	}
 	public void refreshCount(){
 		this.count = datelist.size();
 	}
-	
+	public String getCountAsString(){
+		return count.toString();
+	}
 	public Integer getCount() {
 		return count;
 	}
