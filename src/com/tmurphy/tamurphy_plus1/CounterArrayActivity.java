@@ -1,5 +1,7 @@
 package com.tmurphy.tamurphy_plus1;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import android.app.Activity;
@@ -28,7 +30,21 @@ public class CounterArrayActivity extends Activity {
 		populateListView();
 		
 	}
+	@Override
+	protected void onResume(){
+		super.onResume();
+		sortCArray();
+		populateListView();
+	}
 
+	public void sortCArray() {
+		Collections.sort(cArray, new Comparator<Counter>(){
+			public int compare(Counter c1, Counter c2) {
+				return c2.getCount().compareTo(c1.getCount());
+			}
+		});
+	}
+	
 	public void f_NEWC(View addbutton){
 		EditText etTITLE = (EditText)findViewById(R.id.etTITLENAME);
 		String title = etTITLE.getText().toString();
@@ -78,7 +94,7 @@ public class CounterArrayActivity extends Activity {
 					
 					Intent intentSETC = new Intent(CounterArrayActivity.this, CounterPageActivity.class);
 					Integer indexpos = (Integer)v.getTag();
-					intentSETC.putExtra("index", indexpos);
+					intentSETC.putExtra("index", indexpos) ;
 					startActivity(intentSETC);
 					
 					//String message = "You clicked position" + v.getTag();
@@ -88,13 +104,8 @@ public class CounterArrayActivity extends Activity {
 			
 	
 			return itemView;
-		}
-		
-		
-		
+		}		
 	}
-	
-	
 	
 	
 	public void f_GTC(View GTCbutton){
@@ -110,35 +121,7 @@ public class CounterArrayActivity extends Activity {
 		
 		//cArrayAdapter = new CustomAdapter();
 	}
-	
-	//Following derived from stackoverflow.com/questions/8662494/android-baseadapter-and-getlayoutinflater-on=seperate-class-file
-	/*public class CustomAdapter extends ArrayAdapter<Counter>{
-		public CustomAdapter(){
-			super(CounterArrayActivity.this, R.layout.activity_counterbutton, cArray.getCArray());
-		}
-		@Override
-		public View getView(int index, View convertView, ViewGroup parent){
-			View newView = convertView;
-			//define the view if it doesn't exist
-			Counter counterToViewify = cArray.getCounter(index);
-			if (convertView == null){
-				LayoutInflater layinf = getLayoutInflater();
-				newView = layinf.inflate(R.layout.activity_counterbutton, null);
-				
-				TextView tvTitle = (TextView)findViewById(R.id.counterTitle);
-				tvTitle.setText(counterToViewify.getName());				
-				
-				TextView tvCounter = (TextView)findViewById(R.id.counterCount);
-				tvCounter.setText(counterToViewify.getCount().toString());
-				
-				Button counterbutton = (Button)findViewById(R.id.bGTC);
-				counterbutton.setTag(index);
-			}
-			return newView;
-		}
-	}
-	
-	*/
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

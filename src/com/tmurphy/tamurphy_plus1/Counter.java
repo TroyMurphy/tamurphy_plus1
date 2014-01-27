@@ -3,6 +3,7 @@ package com.tmurphy.tamurphy_plus1;
 
 //import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Counter{
@@ -37,7 +38,22 @@ public class Counter{
 	}
 	public void setDatelist(ArrayList<Date> datelist) {
 		this.datelist = datelist;
+		this.refreshCount();
 	}
+	public void clearDateList(){
+		this.datelist= new ArrayList<Date>();
+		this.refreshCount();
+	}
+	public Date getDate(int index){
+		return this.datelist.get(index);
+	}
+	
+	public Calendar getDateAsCal(int index){
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(datelist.get(index));
+		return cal;
+	}
+	
 	public void addDate(Date newdate){
 		this.datelist.add(newdate);
 		this.refreshCount();
@@ -49,11 +65,13 @@ public class Counter{
 		return count.toString();
 	}
 	public Integer getCount() {
+		this.refreshCount();
 		return count;
 	}
 	public void setCount(Integer count) {
 		this.count = count;
 	}
+	
 	
 	
 }
