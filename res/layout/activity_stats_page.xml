@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".StatsPage" 
+    android:scrollbars="vertical" >
+
+    <TextView
+        android:id="@+id/tvDISPSTAT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bHourly"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:hint="No Statistics Available" />
+
+    <Button
+        android:id="@+id/bMonthly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Monthly"
+        android:onClick="f_MonthlyStats" />
+
+    <Button
+        android:id="@+id/bWeekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bMonthly"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Weekly"
+        android:onClick="f_WeeklyStats" />
+
+    <Button
+        android:id="@+id/bDaily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bWeekly"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Daily"
+        android:onClick="f_DailyStats" />
+
+    <Button
+        android:id="@+id/bHourly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bDaily"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Hourly" 
+        android:onClick="f_HourlyStats"/>
+
+    <TextView
+        android:id="@+id/tvSTATSTITLE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDISPSTAT"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
