@@ -40,6 +40,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tmurphy.tamurphy_plus1.CounterPageActivity" />
         </activity>
+        <activity
+            android:name="com.tmurphy.tamurphy_plus1.CounterStatistics"
+            android:label="@string/title_activity_counter_statistics"
+            android:parentActivityName="com.tmurphy.tamurphy_plus1.CounterPageActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tmurphy.tamurphy_plus1.CounterPageActivity" />
+        </activity>
     </application>
 
 </manifest>

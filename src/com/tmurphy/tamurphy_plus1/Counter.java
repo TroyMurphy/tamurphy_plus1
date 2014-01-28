@@ -2,19 +2,21 @@ package com.tmurphy.tamurphy_plus1;
 
 
 //import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+
+import android.annotation.SuppressLint;
 
 public class Counter{
 
 	//private static final long serialVersionUID = 1L;
 	
 	private String name;
-	private ArrayList<Date> datelist;
+	private ArrayList<Calendar> datelist;
 	private Integer count;
 	
-	public Counter(String name, ArrayList<Date> datelist){
+	public Counter(String name, ArrayList<Calendar> datelist){
 		super();
 		this.name = name;
 		this.datelist = datelist;
@@ -23,7 +25,7 @@ public class Counter{
 	public Counter(String name){
 		super();
 		this.name = name;
-		this.datelist = new ArrayList<Date>();
+		this.datelist = new ArrayList<Calendar>();
 		this.count = 0;
 	}
 	
@@ -33,28 +35,40 @@ public class Counter{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public ArrayList<Date> getDatelist() {
+	public ArrayList<Calendar> getDatelist() {
 		return datelist;
 	}
-	public void setDatelist(ArrayList<Date> datelist) {
+	public void setDatelist(ArrayList<Calendar> datelist) {
 		this.datelist = datelist;
 		this.refreshCount();
 	}
 	public void clearDateList(){
-		this.datelist= new ArrayList<Date>();
+		this.datelist= new ArrayList<Calendar>();
 		this.refreshCount();
 	}
-	public Date getDate(int index){
+	public Calendar getDate(int index){
 		return this.datelist.get(index);
 	}
 	
-	public Calendar getDateAsCal(int index){
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(datelist.get(index));
-		return cal;
+	@SuppressLint("SimpleDateFormat")
+	public String getDateString(int index, boolean month,boolean week, boolean date, boolean hour){
+		SimpleDateFormat sdf;
+		if(hour){
+			sdf = new SimpleDateFormat("yyyy MMM dd HH':00'");
+		}
+		else if(week){
+			sdf = new SimpleDateFormat("yyyy MMM' Week 'W");
+		}
+		else if(date){
+			sdf = new SimpleDateFormat("yyyy MMM dd");			
+		}
+		else{
+			sdf = new SimpleDateFormat("yyyy MMM");			
+		}
+		return sdf.format(getDate(index).getTime());
 	}
 	
-	public void addDate(Date newdate){
+	public void addDate(Calendar newdate){
 		this.datelist.add(newdate);
 		this.refreshCount();
 	}

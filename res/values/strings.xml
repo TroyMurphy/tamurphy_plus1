@@ -19,5 +19,6 @@
     <string name="sRENAME">Rename</string>
     <string name="renamehint">New Name</string>
     <string name="title_activity_stats_page">StatsPage</string>
+    <string name="title_activity_counter_statistics">CounterStatistics</string>
 
 </resources>

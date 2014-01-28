@@ -1,7 +1,9 @@
 package com.tmurphy.tamurphy_plus1;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -90,7 +92,9 @@ public class CounterPageActivity extends Activity {
 		
 	}
 	public void f_PLUSONE(View plusButton){
-		pageCounter.addDate(new Date());
+		Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+		cal.setTime(new Date());
+		pageCounter.addDate(cal);
 		//self refreshes count
 		plusOne.setText(pageCounter.getCountAsString());
 	}

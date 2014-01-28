@@ -16,8 +16,8 @@
         android:layout_above="@+id/bHourly"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:hint="No Statistics Available" />
+        android:layout_below="@+id/tvSTATSTITLE"
+        android:hint="Select a Button to View Statistics" />
 
     <Button
         android:id="@+id/bMonthly"
@@ -61,6 +61,7 @@
 
     <TextView
         android:id="@+id/tvSTATSTITLE"
+        android:textAllCaps="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tvDISPSTAT"
