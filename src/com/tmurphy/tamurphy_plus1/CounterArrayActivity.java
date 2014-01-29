@@ -15,11 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class CounterArrayActivity extends Activity {
 	//now this array does not ever need to be passed as it's a forced singleton
 	private List<Counter> cArray = CounterArray.getInstance();
+	private ArrayAdapter<Counter> cAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class CounterArrayActivity extends Activity {
 	
 	private void populateListView() {
 		//Called by OnCreate, On Resume, and on the add counter button
-		ArrayAdapter<Counter> cAdapter = new CustomAdapter();
+		cAdapter = new CustomAdapter();
 		ListView list = (ListView) findViewById(R.id.lvALLCOUNTERS);
 		list.setAdapter(cAdapter);
 	}
@@ -105,21 +105,6 @@ public class CounterArrayActivity extends Activity {
 	
 			return itemView;
 		}		
-	}
-	
-	
-	public void f_GTC(View GTCbutton){
-		Toast.makeText(getApplicationContext(), "Making Counter", Toast.LENGTH_LONG).show();
-		
-		EditText etName = (EditText)findViewById(R.id.bNEWC);
-		etName.setText("");
-		//String title = etName.getText().toString();
-		//Counter newCounter = new Counter(title);
-		//cArray.addCounter(newCounter);
-		
-		//Toast.makeText(getApplicationContext(), cArray.toString(), Toast.LENGTH_LONG).show();
-		
-		//cArrayAdapter = new CustomAdapter();
 	}
 
 	@Override

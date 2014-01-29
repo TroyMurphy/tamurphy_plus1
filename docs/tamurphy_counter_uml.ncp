@@ -1,0 +1,165 @@
+<Project>
+  <Name>tamurphy_counter_uml</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>CounterArray</Name>
+        <Access>Public</Access>
+        <Location left="391" top="117" />
+        <Size width="179" height="115" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">CounterArray singleton</Member>
+        <Member type="Method">public CounterArray getInstance()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Counter</Name>
+        <Access>Public</Access>
+        <Location left="91" top="97" />
+        <Size width="186" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String name</Member>
+        <Member type="Field">int count</Member>
+        <Member type="Field">ArrayList&lt;Calendar&gt; datelist</Member>
+        <Member type="Method">private void refreshCount()</Member>
+        <Member type="Method">public void addDate()</Member>
+        <Member type="Method">public void clearDateList()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ArrayList&lt;Counter&gt;</Name>
+        <Access>Public</Access>
+        <Location left="654" top="74" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void add()</Member>
+        <Member type="Method">public Counter get()</Member>
+        <Member type="Method">public void remove()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CounterArrayActivity</Name>
+        <Access>Public</Access>
+        <Location left="91" top="377" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void sortCArray()</Member>
+        <Member type="Method">public void populateListView()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CounterPageActivity</Name>
+        <Access>Public</Access>
+        <Location left="338" top="377" />
+        <Size width="219" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Counter pageCounter</Member>
+        <Member type="Method">public void f_delete(View v)</Member>
+        <Member type="Method">public void rename(View v, String name)</Member>
+        <Member type="Method">public void f_reset(View v)</Member>
+        <Member type="Method">public void f_plusone(View v)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StatsPage</Name>
+        <Access>Public</Access>
+        <Location left="654" top="377" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Counter pageCounter</Member>
+        <Member type="Field">private String msgOut</Member>
+        <Member type="Method">public void f_HourlyStats()</Member>
+        <Member type="Method">public void f_DailyStats()</Member>
+        <Member type="Method">public void f_WeeklyStats()</Member>
+        <Member type="Method">public void f_MonthlyStats()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CustomAdapter</Name>
+        <Access>Public</Access>
+        <Location left="106" top="656" />
+        <Size width="376" height="104" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public View getView(int position, View convertView, ViewGroup parent)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartRole>singleton</StartRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="0" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="0" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>422</X>
+          <Y>261</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="4" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="6" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>261</X>
+          <Y>630</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>544</X>
+          <Y>265</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
